@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northstar Civic Institute — Research. Policy. Community Impact.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b3e;--gold:#c8a84b;--gold-lt:#e8d48a;--gold-pale:#f7f0dc;--white:#fff;--off:#f5f4f0;--text:#1a1a1a;--mid:#555;--light:#888;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+.status-bar{background:var(--gold);padding:9px 5%;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.si{display:flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--navy);letter-spacing:.08em;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--navy);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(13,27,62,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,168,75,.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nhex{width:34px;height:34px;background:var(--gold);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);flex-shrink:0;}
+.nw{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:#fff;letter-spacing:.06em;line-height:1.25;}
+.nw span{color:var(--gold);}
+ul.nav-links{display:flex;gap:28px;list-style:none;}
+ul.nav-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.03em;transition:color .2s;}
+ul.nav-links a:hover{color:var(--gold);}
+.ncta{background:var(--gold)!important;color:var(--navy)!important;padding:8px 20px;font-weight:600!important;}
+.ncta:hover{background:var(--gold-lt)!important;color:var(--navy)!important;}
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 5% 80px;}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(200,168,75,.07) 0%,transparent 60%);}
+.hgrid{position:absolute;inset:0;opacity:.035;background-image:linear-gradient(rgba(200,168,75,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(200,168,75,.6) 1px,transparent 1px);background-size:64px 64px;}
+.hi{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;}
+.el{width:28px;height:1px;background:var(--gold);}
+.et{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5.5vw,72px);font-weight:600;line-height:1.04;color:#fff;margin-bottom:22px;}
+h1 em{font-style:italic;color:var(--gold);}
+.hsub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.7);max-width:480px;margin-bottom:36px;}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;}
+.bp{background:var(--gold);color:var(--navy);padding:13px 28px;font-size:14px;font-weight:600;border:none;cursor:pointer;text-decoration:none;letter-spacing:.03em;transition:all .2s;display:inline-block;}
+.bp:hover{background:var(--gold-lt);transform:translateY(-1px);}
+.bo{background:transparent;color:#fff;padding:12px 28px;font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.3);cursor:pointer;text-decoration:none;letter-spacing:.03em;transition:all .2s;display:inline-block;}
+.bo:hover{border-color:var(--gold);color:var(--gold);}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.14);padding:28px 22px;position:relative;}
+.stat::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);}
+.sn{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:5px;}
+.sl{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.04em;line-height:1.45;}
+.sec{padding:100px 5%;}
+.si2{max-width:1200px;margin:0 auto;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.1;color:var(--navy);margin-bottom:18px;}
+h2 em{font-style:italic;color:var(--gold);}
+.sb{font-size:17px;line-height:1.75;color:var(--mid);max-width:640px;}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:56px;}
+.pillars{display:flex;flex-direction:column;}
+.pillar{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid rgba(13,27,62,.1);}
+.pillar:first-child{border-top:1px solid rgba(13,27,62,.1);}
+.pnum{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);font-weight:500;letter-spacing:.1em;padding-top:2px;flex-shrink:0;}
+.ptitle{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:5px;}
+.ptext{font-size:14px;color:var(--mid);line-height:1.6;}
+.qbox{background:var(--navy);padding:48px 40px;position:relative;}
+.qbox::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:120px;color:var(--gold);opacity:.18;line-height:1;position:absolute;top:8px;left:22px;}
+.qt{font-family:'Cormorant Garamond',serif;font-size:25px;font-style:italic;color:#fff;line-height:1.55;position:relative;z-index:1;margin-bottom:18px;}
+.qa{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.15em;}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--off);margin:48px 0 52px;}
+.tab{padding:15px 30px;font-size:14px;font-weight:600;color:var(--light);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-2px;letter-spacing:.03em;transition:all .2s;}
+.tab.active{color:var(--navy);border-bottom-color:var(--gold);}
+.panel{display:none;}
+.panel.active{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.badge{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;background:var(--gold-pale);color:var(--gold);border:1px solid rgba(200,168,75,.3);margin-bottom:18px;}
+.badge.em{background:rgba(26,107,107,.08);color:#1a6b6b;border-color:rgba(26,107,107,.3);}
+.ititle{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--navy);line-height:1.08;margin-bottom:10px;}
+.isub{font-size:14px;color:var(--light);margin-bottom:22px;letter-spacing:.02em;}
+.idesc{font-size:16px;line-height:1.75;color:var(--mid);margin-bottom:28px;}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(13,27,62,.08);margin-bottom:28px;}
+.metric{background:#fff;padding:18px 14px;text-align:center;}
+.mv{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:3px;}
+.ml{font-size:11px;color:var(--light);letter-spacing:.05em;text-transform:uppercase;}
+.streams{display:flex;flex-direction:column;}
+.stream{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid var(--off);}
+.stream:first-child{border-top:1px solid var(--off);}
+.snum{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);flex-shrink:0;padding-top:3px;letter-spacing:.1em;}
+.stitle{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:5px;}
+.stext{font-size:13px;color:var(--mid);line-height:1.6;}
+.spirit{margin-top:22px;background:var(--navy);padding:26px;display:flex;gap:18px;align-items:flex-start;}
+.spicon{width:42px;height:42px;flex-shrink:0;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.3);display:flex;align-items:center;justify-content:center;font-size:18px;}
+.splabel{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.15em;margin-bottom:5px;}
+.sptitle{font-size:15px;font-weight:600;color:#fff;margin-bottom:5px;}
+.sptext{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;}
+.team{background:var(--navy);}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px;}
+.tcard{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.15);padding:38px;position:relative;overflow:hidden;}
+.tcard::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gold);}
+.tinit{width:60px;height:60px;background:rgba(200,168,75,.14);border:1px solid rgba(200,168,75,.3);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--gold);margin-bottom:22px;}
+.tname{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fff;margin-bottom:3px;}
+.ttitle{font-size:13px;color:var(--gold);letter-spacing:.04em;margin-bottom:3px;font-weight:500;}
+.torg{font-size:12px;color:rgba(255,255,255,.38);margin-bottom:18px;font-style:italic;}
+.tbio{font-size:14px;color:rgba(255,255,255,.62);line-height:1.7;}
+.legislation{background:var(--off);}
+.lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:rgba(13,27,62,.1);}
+.lcard{background:#fff;padding:34px 26px;position:relative;}
+.lcard::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--gold);}
+.lbill{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.15em;margin-bottom:10px;font-weight:500;}
+.ltitle{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.lstatus{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;background:rgba(200,168,75,.1);color:var(--gold);border:1px solid rgba(200,168,75,.3);margin-bottom:14px;letter-spacing:.04em;}
+.ltext{font-size:14px;color:var(--mid);line-height:1.65;}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;background:var(--off);}
+.pcard{background:#fff;padding:30px 26px;border-left:3px solid transparent;transition:border-color .2s;}
+.pcard:hover{border-left-color:var(--gold);}
+.ptype{font-family:'DM Mono',monospace;font-size:10px;color:var(--light);letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px;}
+.pname{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:5px;}
+.pdesc{font-size:13px;color:var(--mid);line-height:1.6;}
+.contact{background:var(--navy);padding:100px 5%;}
+.ci{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.cdetails{display:flex;flex-direction:column;gap:22px;margin-top:38px;}
+.citem{display:flex;gap:14px;align-items:flex-start;}
+.cicon{width:40px;height:40px;flex-shrink:0;background:rgba(200,168,75,.12);border:1px solid rgba(200,168,75,.25);display:flex;align-items:center;justify-content:center;font-size:15px;}
+.clabel{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.15em;margin-bottom:3px;}
+.cval{font-size:15px;color:#fff;font-weight:500;}
+.cform{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+.fg{display:flex;flex-direction:column;gap:5px;}
+.flabel{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase;}
+.finput,.fta{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;padding:11px 15px;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color .2s;width:100%;}
+.finput:focus,.fta:focus{border-color:rgba(200,168,75,.5);}
+.fta{resize:vertical;min-height:110px;}
+.finput::placeholder,.fta::placeholder{color:rgba(255,255,255,.22);}
+footer{background:#060d1c;padding:36px 5%;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(200,168,75,.14);flex-wrap:wrap;gap:16px;}
+.flogo{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;color:rgba(255,255,255,.35);}
+.flogo span{color:var(--gold);}
+.fcopy{font-size:11px;color:rgba(255,255,255,.22);}
+ul.flinks{display:flex;gap:22px;list-style:none;}
+ul.flinks a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
+ul.flinks a:hover{color:var(--gold);}
+.fu{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+@media(max-width:768px){
+  .hi,.mgrid,.panel.active,.tgrid,.ci{grid-template-columns:1fr;}
+  .lgrid,.pgrid{grid-template-columns:1fr;}
+  ul.nav-links{display:none;}
+  .stats{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="status-bar">
+  <div class="si"><div class="dot"></div>PlayStrong — Active Pilot</div>
+  <div class="si"><div class="dot"></div>MSEEM Audit — In Progress</div>
+  <div class="si"><div class="dot"></div>501(c)(3) Application — Pending</div>
+</div>
+
+<nav>
+  <a href="#" class="nl">
+    <div class="nhex"></div>
+    <div class="nw"><span>NCI</span> — Northstar Civic<br>Institute</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#initiatives">Initiatives</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#legislation">Legislation</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#contact" class="ncta">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hbg"></div>
+  <div class="hgrid"></div>
+  <div class="hi">
+    <div>
+      <div class="eyebrow"><div class="el"></div><span class="et">Northstar Civic Institute — Michigan</span></div>
+      <h1>Research.<br>Policy.<br><em>Community Impact.</em></h1>
+      <p class="hsub">A nonpartisan research and policy organization piloting evidence-based community programs and producing tools that help school districts, government agencies, and legislators make smarter, more equitable decisions.</p>
+      <div class="hbtns">
+        <a href="#initiatives" class="bp">Our Initiatives</a>
+        <a href="#contact" class="bo">Partner With Us</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="sn">60</div><div class="sl">Youth in active PlayStrong pilot</div></div>
+      <div class="stat"><div class="sn">3</div><div class="sl">Counties — Saginaw, Tuscola & Bay</div></div>
+      <div class="stat"><div class="sn">750+</div><div class="sl">Michigan districts in MSEEM audit scope</div></div>
+      <div class="stat"><div class="sn">2</div><div class="sl">Active initiatives. Evidence-based from day one.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="mission" style="background:var(--off)">
+  <div class="si2">
+    <div class="eyebrow"><div class="el"></div><span class="et">Who We Are</span></div>
+    <h2>Built for the <em>long game</em></h2>
+    <p class="sb">Northstar Civic Institute was founded on the belief that the communities who need policy the most are the ones who have the least say in how it's designed. We change that — through rigorous research, direct program delivery, and tools that travel.</p>
+    <div class="mgrid fu">
+      <div class="pillars">
+        <div class="pillar"><span class="pnum">01</span><div><div class="ptitle">Nonpartisan Research</div><div class="ptext">Evidence that holds up in any room — legislative, administrative, or community. We produce data that doesn't have a political agenda.</div></div></div>
+        <div class="pillar"><span class="pnum">02</span><div><div class="ptitle">Direct Program Delivery</div><div class="ptext">We don't just study problems. We pilot solutions — with independent evaluation built in from day one, not added after the fact.</div></div></div>
+        <div class="pillar"><span class="pnum">03</span><div><div class="ptitle">Policy Tools That Travel</div><div class="ptext">Plain-language, multilingual, district-ready tools designed for a first-year athletic director — and scalable statewide.</div></div></div>
+        <div class="pillar"><span class="pnum">04</span><div><div class="ptitle">Community Trust</div><div class="ptext">We operate in the communities we serve. That trust is not a feature — it is the foundation everything else is built on.</div></div></div>
+      </div>
+      <div class="qbox">
+        <p class="qt">"The communities that need policy the most are the ones who have the least say in how it's designed."</p>
+        <span class="qa">— Donavan Norman, Founder & Executive Director</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="initiatives" style="background:#fff">
+  <div class="si2">
+    <div class="eyebrow"><div class="el"></div><span class="et">Active Initiatives</span></div>
+    <h2>What we're <em>building</em></h2>
+    <div class="tabs">
+      <button class="tab active" onclick="sw('ps',this)">PlayStrong</button>
+      <button class="tab" onclick="sw('ms',this)">MSEEM</button>
+      <button class="tab" onclick="sw('ag',this)">4H / FFA Expansion ↗</button>
+    </div>
+
+    <div class="panel active" id="tab-ps">
+      <div>
+        <span class="badge">Active Pilot — Saginaw, Tuscola, Bay</span>
+        <h3 class="ititle">PlayStrong</h3>
+        <p class="isub">Youth Athletics + Social-Emotional Learning + Behavioral Health Referral Pathways</p>
+        <p class="idesc">A six-month community pilot integrating coached athletics with SEL mentorship and clinical behavioral health referral pathways. Built for the youth who need it most — including those navigating food insecurity, housing instability, foster care, and justice involvement.</p>
+        <div class="metrics">
+          <div class="metric"><div class="mv">60</div><div class="ml">Youth Served</div></div>
+          <div class="metric"><div class="mv">10–15</div><div class="ml">Age Range</div></div>
+          <div class="metric"><div class="mv">1:6</div><div class="ml">Mentor Ratio</div></div>
+        </div>
+        <div class="spirit">
+          <div class="spicon">🏒</div>
+          <div>
+            <div class="splabel">Community Anchor Partner</div>
+            <div class="sptitle">Saginaw Spirit (OHL)</div>
+            <div class="sptext">The Saginaw Spirit is launching a youth hockey program for underprivileged youth — the same community NCI serves. PlayStrong provides the SEL, behavioral health, and family engagement wraparound infrastructure.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="streams">
+          <div class="stream"><span class="snum">A</span><div><div class="stitle">Athletics + SEL Integration</div><div class="stext">Evidence-based coaching curriculum with embedded social-emotional learning competencies at every session.</div></div></div>
+          <div class="stream"><span class="snum">B</span><div><div class="stitle">Behavioral Health Referral Pathways</div><div class="stext">Warm referral protocols to vetted providers. Clinical oversight by Co-Founder Julie Bark, Director of Practice Transformation at Covenant Health.</div></div></div>
+          <div class="stream"><span class="snum">C</span><div><div class="stitle">Family & Community Health Integration</div><div class="stext">Parent wellness programming, caregiver NIL literacy, household stability screening — sports as a family health intervention, not just a youth one.</div></div></div>
+          <div class="stream"><span class="snum">D</span><div><div class="stitle">Independent Evaluation</div><div class="stext">Third-party evaluation built in from day one. Pre/post SEL assessment, behavioral health referral tracking, and publishable outcomes data.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="tab-ms">
+      <div>
+        <span class="badge">Statewide Audit — In Progress</span>
+        <h3 class="ititle">MSEEM</h3>
+        <p class="isub">Michigan Sports Equity & Economic Mobility</p>
+        <p class="idesc">A nonpartisan audit mapping NIL and PBA accessibility gaps across Michigan's school districts — and producing district-ready compliance tools following Michigan's extension of NIL rights to high school athletes.</p>
+        <div class="metrics">
+          <div class="metric"><div class="mv">750+</div><div class="ml">Districts in Scope</div></div>
+          <div class="metric"><div class="mv">2</div><div class="ml">Audit Tracks</div></div>
+          <div class="metric"><div class="mv">3</div><div class="ml">Workstreams</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="streams">
+          <div class="stream"><span class="snum">1</span><div><div class="stitle">NIL / PBA Accessibility Audit</div><div class="stext">Maps where education and compliance support is strong versus where resource deserts leave students exposed to risk.</div></div></div>
+          <div class="stream"><span class="snum">2</span><div><div class="stitle">Socioeconomic Participation Gap Analysis</div><div class="stext">Examines income, transportation, broadband, banking, and language barriers that prevent equitable NIL participation.</div></div></div>
+          <div class="stream"><span class="snum">3</span><div><div class="stitle">District-Ready Compliance Tools</div><div class="stext">Plain-language PBA guides, multilingual family FAQ, compliance checklists — usable by any district without legal support.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="tab-ag">
+      <div>
+        <span class="badge em">Emerging Initiative — In Development</span>
+        <h3 class="ititle">4H / FFA<br>Urban-Rural Expansion</h3>
+        <p class="isub">Agricultural & Rural Youth Equity — Inner City + Outer City</p>
+        <p class="idesc">Connecting inner-city and outer-city Michigan youth to agricultural programming through 4H and FFA — building pathways to career credentials, land access literacy, and rural economic opportunity. Emerging from conversations with Michigan legislative partners.</p>
+        <div class="metrics">
+          <div class="metric"><div class="mv">2</div><div class="ml">Populations</div></div>
+          <div class="metric"><div class="mv">3+</div><div class="ml">Counties</div></div>
+          <div class="metric"><div class="mv">MI</div><div class="ml">Statewide Scope</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="streams">
+          <div class="stream"><span class="snum">1</span><div><div class="stitle">Equity Framework Design</div><div class="stext">NCI designs the community engagement infrastructure connecting urban youth who lack agricultural exposure to existing 4H and FFA programming.</div></div></div>
+          <div class="stream"><span class="snum">2</span><div><div class="stitle">Urban-Rural Bridge Programming</div><div class="stext">Saginaw urban and Tuscola rural youth in shared agricultural programming — closing a divide that benefits neither community.</div></div></div>
+          <div class="stream"><span class="snum">3</span><div><div class="stitle">Career Credential Pathways</div><div class="stext">FFA career development programs lead to real, stackable credentials. NCI builds the access infrastructure for under-resourced youth.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec team" id="team">
+  <div class="si2">
+    <div class="eyebrow"><div class="el" style="background:rgba(200,168,75,.6)"></div><span class="et" style="color:rgba(200,168,75,.7)">Leadership</span></div>
+    <h2 style="color:#fff">The <em>founding team</em></h2>
+    <p class="sb" style="color:rgba(255,255,255,.6)">Two practitioners. Complementary expertise. One mission.</p>
+    <div class="tgrid fu">
+      <div class="tcard">
+        <div class="tinit">DN</div>
+        <div class="tname">Donavan Norman</div>
+        <div class="ttitle">Founder & Executive Director</div>
+        <div class="torg">MPA Candidate, Central Michigan University</div>
+        <p class="tbio">Donavan founded Northstar Civic Institute to build the research infrastructure and policy tools that translate civic equity from policy documents into lived reality. His background spans public administration, community program design, and legislative engagement across Michigan's state agencies, school systems, and legislative offices.</p>
+      </div>
+      <div class="tcard">
+        <div class="tinit">JB</div>
+        <div class="tname">Julie Bark</div>
+        <div class="ttitle">Co-Founder & Chief Clinical Officer</div>
+        <div class="torg">Director of Practice Transformation, Covenant Health</div>
+        <p class="tbio">Julie brings deep clinical leadership to NCI's behavioral health integration work. As Director of Practice Transformation at Covenant Health, she redesigns care delivery systems at scale — the same expertise that drives PlayStrong's warm referral architecture and clinical oversight. Her presence makes NCI's behavioral health work credible in every room it enters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec legislation" id="legislation">
+  <div class="si2">
+    <div class="eyebrow"><div class="el"></div><span class="et">Legislative Context</span></div>
+    <h2>The policy <em>landscape</em></h2>
+    <p class="sb">Three active Michigan bills shape the environment NCI is working in — and our tools directly inform their equitable implementation.</p>
+    <div class="lgrid fu">
+      <div class="lcard"><div class="lbill">HB 4643</div><h3 class="ltitle">NIL Rights for High School Athletes</h3><span class="lstatus">Active — House</span><p class="ltext">Extends name, image, and likeness rights to Michigan high school student-athletes. NCI's MSEEM audit maps whether the equity infrastructure exists to make these rights real for under-resourced students.</p></div>
+      <div class="lcard"><div class="lbill">HB 4371</div><h3 class="ltitle">Youth Sports Standards & Equity</h3><span class="lstatus">Active — House</span><p class="ltext">Establishes baseline standards for youth athletic programs. PlayStrong is an active, evidence-based model of exactly the kind of equitable youth sports programming this legislation contemplates.</p></div>
+      <div class="lcard"><div class="lbill">SB 0014</div><h3 class="ltitle">Financial Access & Equity</h3><span class="lstatus">Active — Senate</span><p class="ltext">Addresses cashless payment equity — with direct implications for unbanked families navigating youth sports participation and NIL financial transactions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="partners" style="background:#fff">
+  <div class="si2">
+    <div class="eyebrow"><div class="el"></div><span class="et">Partners & Stakeholders</span></div>
+    <h2>Built <em>together</em></h2>
+    <p class="sb">NCI works alongside Michigan's leading institutions, agencies, and community partners to ensure our research reaches the right people and our tools get used.</p>
+    <div class="pgrid fu">
+      <div class="pcard"><div class="ptype">State Association</div><div class="pname">MHSAA</div><div class="pdesc">Michigan High School Athletic Association — governing body for PBA framework and NIL compliance at the high school level.</div></div>
+      <div class="pcard"><div class="ptype">State Department</div><div class="pname">MiLEAP</div><div class="pdesc">Michigan Department of Lifelong Education, Advancement, and Potential — district relationships, Sixty by 30, and tool distribution.</div></div>
+      <div class="pcard"><div class="ptype">State Department</div><div class="pname">MDHHS</div><div class="pdesc">Michigan Department of Health and Human Services — behavioral health pathways, 331a scoping study, and family services coordination.</div></div>
+      <div class="pcard"><div class="ptype">Community Anchor</div><div class="pname">Saginaw Spirit (OHL)</div><div class="pdesc">Professional hockey franchise launching a youth program for underprivileged Saginaw youth — NCI provides SEL and behavioral health wraparound infrastructure.</div></div>
+      <div class="pcard"><div class="ptype">Higher Education</div><div class="pname">Central Michigan University</div><div class="pdesc">Academic partner and regional anchor for Mid-Michigan postsecondary pathways. Home of NCI's founding leadership.</div></div>
+      <div class="pcard"><div class="ptype">Healthcare</div><div class="pname">Covenant Health</div><div class="pdesc">Regional health system and professional home of NCI Co-Founder Julie Bark — providing clinical credibility and behavioral health network infrastructure.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="ci">
+    <div>
+      <div class="eyebrow"><div class="el" style="background:rgba(200,168,75,.6)"></div><span class="et" style="color:rgba(200,168,75,.7)">Get In Touch</span></div>
+      <h2 style="color:#fff">Let's <em>build</em><br>together</h2>
+      <p class="sb" style="color:rgba(255,255,255,.6)">Whether you're a legislator, school district, community organization, or funder — if you're working toward equitable outcomes for Michigan youth and families, we want to talk.</p>
+      <div class="cdetails">
+        <div class="citem"><div class="cicon">✉</div><div><div class="clabel">Email</div><div class="cval">donavan@nciresearch.org</div></div></div>
+        <div class="citem"><div class="cicon">☎</div><div><div class="clabel">Phone</div><div class="cval">989-882-7336</div></div></div>
+        <div class="citem"><div class="cicon">🌐</div><div><div class="clabel">Web</div><div class="cval">nciresearch.org</div></div></div>
+        <div class="citem"><div class="cicon">📍</div><div><div class="clabel">Region</div><div class="cval">Mid-Michigan — Saginaw, Tuscola & Bay Counties</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="cform">
+        <div class="fg"><label class="flabel">Name</label><input type="text" class="finput" placeholder="Your name"></div>
+        <div class="fg"><label class="flabel">Organization</label><input type="text" class="finput" placeholder="Your organization"></div>
+        <div class="fg"><label class="flabel">Email</label><input type="email" class="finput" placeholder="your@email.com"></div>
+        <div class="fg"><label class="flabel">How can we work together?</label><textarea class="fta" placeholder="Tell us about your interest in NCI's work..."></textarea></div>
+        <button class="bp" style="width:100%;text-align:center;border:none;">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo"><span>NCI</span> — Northstar Civic Institute</div>
+  <p class="fcopy">© 2026 Northstar Civic Institute · State incorporated Michigan · EIN issued · 501(c)(3) pending</p>
+  <ul class="flinks"><li><a href="#mission">Mission</a></li><li><a href="#initiatives">Initiatives</a></li><li><a href="#contact">Contact</a></li></ul>
+</footer>
+
+<script>
+function sw(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.boxShadow=window.scrollY>60?'0 4px 30px rgba(0,0,0,.3)':'none';
+});
+</script>
+</body>
+</html>
