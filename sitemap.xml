@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nciresearch.org/</loc><priority>1.0</priority></url>
+  <url><loc>https://nciresearch.org/about.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/initiatives.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/briefs.html</loc><priority>0.9</priority></url>
+  <url><loc>https://nciresearch.org/legislation.html</loc><priority>0.7</priority></url>
+  <url><loc>https://nciresearch.org/contact.html</loc><priority>0.7</priority></url>
+  <url><loc>https://nciresearch.org/brief-1.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/brief-2.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/brief-3.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/brief-4.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/brief-5.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nciresearch.org/community-equity-lab/</loc><priority>0.6</priority></url>
+  <url><loc>https://nciresearch.org/community-equity-lab/about.html</loc><priority>0.5</priority></url>
+  <url><loc>https://nciresearch.org/community-equity-lab/initiatives.html</loc><priority>0.5</priority></url>
+  <url><loc>https://nciresearch.org/community-equity-lab/briefs.html</loc><priority>0.5</priority></url>
+  <url><loc>https://nciresearch.org/community-equity-lab/contact.html</loc><priority>0.5</priority></url>
+</urlset>
