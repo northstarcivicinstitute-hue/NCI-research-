@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
-  <title id="title">Northstar Civic Institute mark</title>
-  <desc id="desc">Two gold circles connected by a light line on a navy square.</desc>
-  <rect width="120" height="120" rx="28" fill="#0d1b3e"/>
-  <circle cx="30" cy="60" r="15" fill="#c8a84b"/>
-  <circle cx="90" cy="60" r="15" fill="#c8a84b"/>
-  <rect x="44" y="56" width="32" height="8" rx="4" fill="#f7f0dc"/>
-</svg>
