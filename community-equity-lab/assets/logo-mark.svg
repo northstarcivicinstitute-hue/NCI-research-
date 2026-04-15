@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Community Equity Lab mark</title>
+  <desc id="desc">Compass-like four-point mark with cream ring and teal, gold, coral, and cream points.</desc>
+  <defs>
+    <style>
+      .cream { fill: #f1e8d8; }
+      .teal { fill: #1297a6; }
+      .gold { fill: #f0b414; }
+      .coral { fill: #f25b2e; }
+      .stroke { stroke: #f1e8d8; stroke-width: 22; fill: none; }
+    </style>
+  </defs>
+  <circle class="stroke" cx="300" cy="260" r="185"/>
+  <rect x="48" y="249" width="118" height="22" class="cream" rx="8"/>
+  <rect x="434" y="249" width="118" height="22" class="cream" rx="8"/>
+  <polygon class="teal" points="70,275 300,242 225,418"/>
+  <polygon class="coral" points="300,242 430,126 350,286"/>
+  <polygon class="gold" points="300,242 540,276 328,321 290,560 260,318 215,302"/>
+  <polygon class="cream" points="300,20 330,206 300,190 270,206"/>
+</svg>
